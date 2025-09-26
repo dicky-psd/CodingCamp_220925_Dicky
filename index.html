@@ -5,36 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio - Dicky</title>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Link ke CSS eksternal -->
+    <link rel="stylesheet" href="css/style.css">
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body>
-    <!-- Header Section -->
-    <header class="main header">
-        <div class="logo"></div>
-
+    <!-- Header dengan Navigasi -->
+    <header class="header">
+        <div class="logo">
+            <a href="#home" class="logo-link"> <img src="asset/JALADI logo.png" alt="Logo JALADI" class="logo-image">
+                <span class="logo-text">JALADI.com</span>
+            </a> </div>
         <nav>
-            <ul class="nav-links">
+            <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#profile">Our Profile</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#message-us">Message Us</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Main Content -->
-    <main></main>
+    <main>
+        <!-- Welcome Section -->
+        <section id="home" class="welcome-section">
+            <div class="section-content">
+                <h1>Hi <span id="username"></span>, Welcome To JALADI</h1>
+                <p>Partner Digital Marketing Mu</p>
+            </div>
 
-    <!-- Footer content -->
-     <footer></footer>
-     
-    <!-- JavaScript external -->
+            <!-- Banner Image -->
+            <img src="asset/banner jaladi.png" alt="Banner JALADI" class="banner-image">
+
+        </section>
+
+        <!-- Our Profile Section -->
+        <section id="profile" class="profile-section">
+            <div class="section-content profile-content">
+                <h2>Our Profile</h2>
+                <p class="description">
+                    <b>JALADI (Jasa Layanan Digital)</b> adalah layanan konsultasi komprehensif yang dirancang untuk membantu nelayan, petani ikan, dan UMKM pengolah hasil perikanan dalam membangun kehadiran daring (online) mereka. Tujuan kami adalah meningkatkan penjualan, memperluas jangkauan pasar, dan membangun merek produk perikanan melalui strategi pemasaran digital yang efektif.
+                </p>
+                
+                <!-- Visi & Misi dalam 2 kolom -->
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3>Visi</h3>
+                        <p>Menjadi mitra digital terdepan bagi industri perikanan di Indonesia, memberdayakan pelaku usaha dari hulu hingga hilir melalui teknologi yang inovatif dan mudah diakses.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Misi</h3>
+                        <p>Menyediakan solusi digital yang efektif untuk meningkatkan penjualan dan jangkauan pasar produk perikanan, serta memberikan konsultasi untuk membangun merek yang kuat dan berkelanjutan di dunia online.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio-section">
+            <div class="section-content">
+                <h2>Our Portfolio</h2>
+                <div class="portfolio-grid">
+
+                    <div class="portfolio-item">
+                        <img src="asset/Proyek 1.png" alt="Branding Digital Ikan Segar" class="portfolio-image">
+                        <h3>Branding Digital 'Ikan Segar Pak Budi'</h3>
+                        <p>Membangun identitas brand dan mengelola media sosial untuk nelayan tradisional, berhasil meningkatkan pesanan online hingga 300%.</p>
+                    </div>
+
+                    <div class="portfolio-item">
+                        <img src="asset/Proyek 2.png" alt="Optimasi E-commerce Mina Jaya Farm" class="portfolio-image">
+                        <h3>Optimasi E-commerce 'Mina Jaya Farm'</h3>
+                        <p>Konsultasi dan optimasi toko online di marketplace untuk kelompok petambak ikan, meningkatkan visibilitas produk dan jangkauan pasar.</p>
+                    </div>
+
+                    <div class="portfolio-item">
+                        <img src="asset/Proyek 3.png" alt="Peluncuran Produk Kerupuk Ikan" class="portfolio-image">
+                        <h3>Peluncuran Produk UMKM 'Kerupuk Ikan Rinjani'</h3>
+                        <p>Membuat strategi konten peluncuran produk olahan ikan, mulai dari foto produk profesional hingga kampanye video.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Message Us Section -->
+        <section id="message-us" class="message-us-section">
+            <div class="section-content">
+                <h2 style="margin-bottom: 50px;">Message Us</h2>
+                <div class="form-container">
+                    <form id="messageForm">
+                        <div class="form-group">
+                            <label for="name">Nama</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Jenis Kelamin</label>
+                            <div class="radio-group">
+                                <input type="radio" id="male" name="gender" value="Laki-Laki" required> <label for="male">Laki-Laki</label>
+                                <input type="radio" id="female" name="gender" value="Perempuan"> <label for="female">Perempuan</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                    <div class="output-box">
+                        <p><strong>Current Time:</strong> <span id="currentTime">-</span></p><hr>
+                        <p><strong>Name:</strong> <span id="outputName">-</span></p>
+                        <p><strong>Email:</strong> <span id="outputEmail">-</span></p>
+                        <p><strong>Jenis Kelamin:</strong> <span id="outputGender">-</span></p>
+                        <p><strong>Pesan:</strong> <span id="outputMessage">-</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer Content -->
+        <p>&copy; 2025 Dicky. All rights reserved.</p>
+    </footer>
+
+    <!-- Link ke JavaScript eksternal -->
     <script src="js/script.js"></script>
 </body>
 </html>

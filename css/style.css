@@ -1,0 +1,340 @@
+/* General Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Membuat scroll navigasi lebih halus */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+    position: fixed; /* Membuat header tetap di atas saat scroll */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-image {
+    height: 75px; /* Sesuaikan ukuran logo sesuai kebutuhan */
+    width: auto; /* Pertahankan rasio aspek */
+    border-radius: 50%; /* Membuatnya berbentuk lingkaran */
+    object-fit: cover; /* Memastikan gambar terisi dengan baik dalam lingkaran */
+    background-color: #303030; /* Warna latar belakang jika gambar tidak berbentuk lingkaran sempurna */
+    padding: 1px; /* Memberi sedikit ruang di sekitar gambar */
+}
+
+.logo {
+    display: flex;         /* Membuat item di dalamnya (gambar & teks) berjajar ke samping */
+    align-items: center;   /* Membuat gambar & teks sejajar di tengah secara vertikal */
+    gap: 12px;             /* Memberi sedikit jarak antara gambar dan teks */
+}
+
+/* 2. Atur gaya untuk teks logo */
+.logo-text {
+    font-size: 24px;       /* Ukuran font, sesuaikan jika perlu */
+    font-weight: bold;     /* Membuat teks tebal */
+    color: #333;           /* Warna teks */
+    font-style: italic;    /* Membuat teks miring */
+}
+
+.logo-link {
+    text-decoration: none; /* Menghilangkan garis bawah dari link */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    border: 1px solid #b0b0b0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+nav li:not(:last-child) {
+    border-right: 1px solid #b0b0b0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 8px 20px;
+    display: block;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+/* --- PERUBAHAN UTAMA: Section Sizing --- */
+main {
+    padding-top: 70px; /* Memberi ruang agar konten tidak tertutup header */
+}
+
+section {
+    min-height: 100vh; /* Membuat setiap section setinggi layar */
+    padding: 60px 50px;
+    border-bottom: 1px solid #ddd;
+    /* Menengahkan konten di dalam section secara vertikal & horizontal */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-section {
+    justify-content: flex-start; /* Konten mulai dari atas */
+    align-items: flex-start;    /* Konten mulai dari kiri */
+}
+
+/* Aturan khusus agar teks di section Home menjadi rata kiri */
+.welcome-section .section-content {
+    text-align: left;
+    padding: 40px; /* Memberi ruang di sekitar teks */
+    padding-top: 60px;
+    font-size: 1.2em; /* Ukuran font lebih besar untuk keterbacaan */
+}
+
+.section-content {
+    width: 100%;
+    max-width: 1200px; /* Batas lebar maksimum konten */
+    text-align: center;
+}
+
+/* Profile Section */
+.profile-section { 
+    background-color: #f9f9f9;
+    justify-content: flex-start; 
+    padding-top: 200px;
+}
+.profile-content .description { 
+    font-size: 1.2em; 
+    line-height: 1.7; 
+    max-width: 900px; 
+    margin: 20px auto 40px auto; 
+    color: #555; 
+    text-align: justify;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Membuat 2 kolom */
+    gap: 40px;
+    text-align: left;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.feature-item {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.feature-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 5px;
+    color: #333;
+}
+
+.feature-item p {
+    font-size: 1.05em;
+    line-height: 1.7;
+    color: #444;
+}
+/* KODE LAMA DIHAPUS: .vision-mission sudah tidak dipakai */
+
+/* Portfolio Section */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.portfolio-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.portfolio-item h3 {
+    margin-bottom: 10px;
+    color: #007BFF;
+}
+.portfolio-item p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Styling untuk gambar thumbnail portfolio */
+.portfolio-image {
+    width: 100%; /* Membuat lebar gambar memenuhi container */
+    height: 180px; /* Menetapkan tinggi yang seragam */
+    object-fit: cover; /* Kunci agar gambar tidak penyok/stretch */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Message Us Section */
+.form-container {
+    display: flex;
+    gap: 100px;
+}
+
+form {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"], /* Diperbarui: Tambahkan input type="email" */
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+/* Tambahan: Gaya khusus untuk input email saat fokus */
+input[type="email"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+    outline: none; /* Hilangkan outline default browser */
+    border-color: #007BFF; /* Warna border biru saat fokus */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Shadow saat fokus */
+}
+
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.radio-group input {
+    margin-right: 2px;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Output Box */
+.output-box {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 4px;
+    height: fit-content;
+    text-align: left; /* Rata kiri teks di dalam output box */
+}
+
+.output-box p {
+    margin-bottom: 10px;
+}
+
+.output-box hr {
+    margin: 15px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+/* Footer */
+footer {
+    text-align: right;
+    padding: 20px 50px;
+    border-top: 1px solid #ddd;
+    font-size: 0.9em;
+    color: #666;
+    background-color: #f4f4f4;
+}
+
+/* Penyesuaian untuk layar kecil (Mobile) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+    main {
+        padding-top: 120px; /* Ruang lebih untuk header di mobile */
+    }
+    section {
+        padding: 40px 20px;
+    }
+    .features-grid {
+        grid-template-columns: 1fr; /* Ubah jadi 1 kolom di mobile */
+    }
+    .form-container {
+        flex-direction: column;
+    }
+}
+
+.banner-image {
+    position: absolute; /* Membuat gambar "melayang" */
+
+    /* Trik untuk menempatkan di tengah sempurna */
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    z-index: -1; /* Meletakkannya di belakang teks */
+    pointer-events: none;
+}
+
+/* Membuat banner hilang di layar kecil agar tidak menumpuk */
+@media (max-width: 900px) {
+    .banner-image {
+        display: none;
+    }
+}
